@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(-45deg, #ff7e5f, #feb47b, #ffcc70, #ff6a88);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.quiz-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+#question {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+#options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option-btn {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 12px;
+  background: #ff7e5f;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.option-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: #ff5722;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.option-btn.correct {
+  background-color: #4caf50 !important;
+}
+
+.option-btn.wrong {
+  background-color: #f44336 !important;
+}
+
+.hide {
+  display: none;
+}
+
+/* Progress Bar */
+#progress-container {
+  background: #eee;
+  border-radius: 20px;
+  height: 10px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+#progress-bar {
+  background: #ff7e5f;
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+/* Result */
+#result {
+  background: #fff3e0;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+#score {
+  color: #ff5722;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#restart-btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background: #4caf50;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#restart-btn:hover {
+  background: #45a049;
+}
+
+/* Responsive */
+@media(max-width: 500px){
+  .quiz-container {
+    padding: 1.5rem;
+  }
+
+  #question {
+    font-size: 1rem;
+  }
+
+  .option-btn {
+    font-size: 0.95rem;
+  }
+}
